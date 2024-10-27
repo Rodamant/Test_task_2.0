@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="test_task_2.0_code_main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DataFlight.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
