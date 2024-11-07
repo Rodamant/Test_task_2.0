@@ -20,7 +20,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DataFlight.h">
+    <ClInclude Include="dataF.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="departureBoard.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="headlines.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

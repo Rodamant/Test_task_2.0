@@ -1,4 +1,16 @@
 #pragma once
+#include"headlines.h"
+#include"departureBoard.h"
+
+
+enum class statusFlight
+{
+	arrived,
+	expected,
+	landing,
+	delayed,
+	cancelled
+};
 
 class DataFlight
 {
@@ -21,14 +33,60 @@ public:
 		this->status = status;
 		this->delayTime = delayTime;
 	}
-	void FillFlightDetails(std::string departureTime, std::string gate, std::string placeOfDeparture, std::string placeOfArrival, std::string status, std::string delayTime)
+	void FillFlightDetails()
 	{
+		std::string departureTime;
+		std::string gate;
+		std::string placeOfDeparture;
+		std::string placeOfArrival;
+		std::string status;
+		std::string delayTime;
+		std::cout << "Enter the flight departure time: " << std::endl;
+		std::cin >> departureTime;
+		std::cout << "Enter the gate: " << std::endl;
+		std::cin >> gate;
+		std::cout << "Enter the place of departure: " << std::endl;
+		std::cin >> placeOfDeparture;
+		std::cout << "Enter the place of arrival: " << std::endl;
+		std::cin >> placeOfArrival;
+		//
+		std::cout << "Please indicate the flight status: \n 1 - if the flight arrived \n 2 - if arrival is expected \n 3 - if the flight lands \n 4 - if the flight is delayed \n 5 - if the flight is cancelled" << std::endl;
+		int a;
+		std::cin >> a;
+		switch (a)
+		{
+		case 1:
+			status = "arrived";
+			break;
+		case 2:
+			status = "expected";
+			break;
+		case 3:
+			status = "lands";
+			break;
+		case 4:
+			status = "delayed";
+			break;
+		case 5:
+			status = "cancelled";
+			break;
+		}
+		if (a == 4)
+		{
+			std::cout << "please indicate the flight delay time: " << std::endl;
+			std::cin >> delayTime;
+		}
+		else
+		{
+			delayTime = "-";
+		}
+
 		this->departureTime = departureTime;
 		this->gate = gate;
 		this->placeOfDeparture = placeOfDeparture;
 		this->placeOfArrival = placeOfArrival;
 		this->status = status;
-		this->delayTime = delayTime;	
+		this->delayTime = delayTime;
 	}
 
 	void PrintFlightDetails()
